@@ -34,6 +34,8 @@ export type CornerSpaces = [
   PrimaryResourceSpace,
 ];
 
+export type CardId = `CARD_${string}`;
+
 // === === === === === === === ===
 
 /**
@@ -47,6 +49,7 @@ export type StartingCardProps = {
 };
 
 export type StartingCard = {
+  id: CardId;
   type: "starting";
   properties: StartingCardProps;
 };
@@ -60,6 +63,7 @@ export type ResourceCardProps = {
 };
 
 export type ResourceCard = {
+  id: CardId;
   type: "resource";
   properties: ResourceCardProps;
 };
@@ -79,6 +83,7 @@ export type GoldCardProps = {
 };
 
 export type GoldCard = {
+  id: CardId;
   type: "gold";
   properties: GoldCardProps;
 };
@@ -88,6 +93,7 @@ export type GoldCard = {
 export type ObjectiveCardProps = "";
 
 export type ObjectiveCard = {
+  id: CardId;
   type: "objective";
   properties: ObjectiveCardProps;
 };

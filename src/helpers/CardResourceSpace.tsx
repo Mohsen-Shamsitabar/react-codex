@@ -9,18 +9,23 @@ const CardResourceSpace = (resourceSpace: ResourceSpace) => {
     case "BLUE": {
       return <div className="bg-primary-blue aspect-square border" />;
     }
+
     case "GREEN": {
       return <div className="bg-primary-green aspect-square border" />;
     }
+
     case "ORANGE": {
       return <div className="bg-primary-orange aspect-square border" />;
     }
+
     case "PURPLE": {
       return <div className="bg-primary-purple aspect-square border" />;
     }
+
     case "QUILL": {
       return <div className="aspect-square border bg-cyan-400" />;
     }
+
     default:
       return null;
   }

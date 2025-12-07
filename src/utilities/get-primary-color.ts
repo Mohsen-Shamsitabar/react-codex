@@ -8,15 +8,19 @@ const getPrimaryColorToken = (
     case PRIMARY_RESOURCE_TYPES.BLUE: {
       return "bg-primary-blue";
     }
+
     case PRIMARY_RESOURCE_TYPES.GREEN: {
       return "bg-primary-green";
     }
+
     case PRIMARY_RESOURCE_TYPES.ORANGE: {
       return "bg-primary-orange";
     }
+
     case PRIMARY_RESOURCE_TYPES.PURPLE: {
       return "bg-primary-purple";
     }
+
     default:
       return;
   }

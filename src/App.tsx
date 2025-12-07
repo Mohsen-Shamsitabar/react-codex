@@ -1,4 +1,4 @@
-import CardBase from "@/components/Card.tsx";
+import CardBase from "@/components/CardBase.tsx";
 import {
   BLANK_TYPES,
   POINT_CATEGORIES,
@@ -39,6 +39,7 @@ const App = () => {
   // };
 
   const goldCard: Card = {
+    id: "CARD_gold1",
     type: "gold",
     properties: {
       primaryResource: PRIMARY_RESOURCE_TYPES.BLUE,
@@ -61,7 +62,7 @@ const App = () => {
 
   return (
     <div className="flex size-full flex-col items-center justify-center">
-      <CardBase card={goldCard} />
+      <CardBase {...goldCard} />
     </div>
   );
 };

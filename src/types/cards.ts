@@ -1,5 +1,6 @@
 import type {
   BLANK_TYPES,
+  CARD_TYPES,
   POINT_CATEGORIES,
   PRIMARY_RESOURCE_TYPES,
   SECONDARY_RESOURCE_TYPES,
@@ -50,7 +51,7 @@ export type StartingCardProps = {
 
 export type StartingCard = {
   id: CardId;
-  type: "starting";
+  type: (typeof CARD_TYPES)["STARTER"];
   properties: StartingCardProps;
 };
 
@@ -64,7 +65,7 @@ export type ResourceCardProps = {
 
 export type ResourceCard = {
   id: CardId;
-  type: "resource";
+  type: (typeof CARD_TYPES)["RESOURCE"];
   properties: ResourceCardProps;
 };
 
@@ -84,7 +85,7 @@ export type GoldCardProps = {
 
 export type GoldCard = {
   id: CardId;
-  type: "gold";
+  type: (typeof CARD_TYPES)["GOLD"];
   properties: GoldCardProps;
 };
 
@@ -94,10 +95,11 @@ export type ObjectiveCardProps = "";
 
 export type ObjectiveCard = {
   id: CardId;
-  type: "objective";
+  type: (typeof CARD_TYPES)["OBJECTIVE"];
   properties: ObjectiveCardProps;
 };
 
 // === === === === === === === ===
 
 export type Card = StartingCard | ResourceCard | GoldCard | ObjectiveCard;
+export type PlayableCardType = ResourceCard | GoldCard;

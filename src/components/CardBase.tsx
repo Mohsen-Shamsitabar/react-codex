@@ -1,30 +1,26 @@
-import GoldCard from "@/components/GoldCard.tsx";
-import ResourceCard from "@/components/ResourceCard.tsx";
+import PlayableCard from "@/components/PlayableCard.tsx";
 import StartingCard from "@/components/StartingCard.tsx";
+import { CARD_TYPES } from "@/contstants/cards.ts";
 import type { Card } from "@/types/cards.ts";
 
 const CardBase = (card: Card) => {
-  const renderCardType = () => {
-    switch (card.type) {
-      case "starting": {
-        return <StartingCard {...card.properties} />;
-      }
-      case "resource": {
-        return <ResourceCard {...card.properties} />;
-      }
-      case "gold": {
-        return <GoldCard {...card.properties} />;
-      }
-      case "objective": {
-        return;
-      }
+  if (card.type === CARD_TYPES.GOLD || card.type === CARD_TYPES.RESOURCE) {
+    return <PlayableCard {...card} />;
+  }
 
-      default:
-        return null;
-    }
-  };
+  if (card.type === CARD_TYPES.STARTER) {
+    return (
+      <div className="w-card-width aspect-card">
+        <StartingCard {...card.properties} />;
+      </div>
+    );
+  }
 
-  return <div className="w-card-width aspect-card">{renderCardType()}</div>;
+  if (card.type === CARD_TYPES.OBJECTIVE) {
+    return <div className="w-card-width aspect-card">objective</div>;
+  }
+
+  return null;
 };
 
 export default CardBase;

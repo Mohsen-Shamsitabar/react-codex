@@ -18,3 +18,10 @@ export const POINT_CATEGORIES = {
   CORNER: "CORNER",
   QUILL: "QUILL",
 } as const;
+
+export const CARD_TYPES = {
+  STARTER: "STARTER",
+  RESOURCE: "RESOURCE",
+  GOLD: "GOLD",
+  OBJECTIVE: "OBJECTIVE",
+} as const;

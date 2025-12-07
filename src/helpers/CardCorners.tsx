@@ -3,11 +3,19 @@ import CardResourceSpace from "@/helpers/CardResourceSpace.tsx";
 import type { CornerSpaces } from "@/types/cards.ts";
 
 type Props = {
-  cornerSpaces: CornerSpaces;
+  cornerSpaces?: CornerSpaces;
 };
 
+// might need a better way...
+const initialValue: CornerSpaces = [
+  BLANK_TYPES.EMPTY,
+  BLANK_TYPES.EMPTY,
+  BLANK_TYPES.EMPTY,
+  BLANK_TYPES.EMPTY,
+];
+
 const CardCorners = (props: Props) => {
-  const { cornerSpaces } = props;
+  const { cornerSpaces = initialValue } = props;
 
   const [topLeft, topRight, bottomRight, bottomLeft] = cornerSpaces;
 

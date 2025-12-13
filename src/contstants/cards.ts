@@ -11,7 +11,7 @@ export const SECONDARY_RESOURCE_TYPES = {
 
 export const BLANK_TYPES = {
   EMPTY: "EMPTY",
-  NULL: null,
+  NULL: "NULL",
 } as const;
 
 export const POINT_CATEGORIES = {

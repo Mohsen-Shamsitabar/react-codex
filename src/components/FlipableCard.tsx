@@ -3,10 +3,11 @@ import GoldCard from "@/components/GoldCard.tsx";
 import ResourceCard from "@/components/ResourceCard.tsx";
 import { CARD_TYPES } from "@/contstants/cards.ts";
 import type { PlayableCardType } from "@/types/cards.ts";
+import { generateResource } from "@/utilities/resource-generators.ts";
 import { motion } from "framer-motion";
 import { useState, type MouseEvent } from "react";
 
-const PlayableCard = (card: PlayableCardType) => {
+const FlipableCard = (card: PlayableCardType) => {
   const { primaryResource } = card.properties;
   const [isOffSide, setIsOffSide] = useState(false);
 
@@ -16,6 +17,7 @@ const PlayableCard = (card: PlayableCardType) => {
   };
 
   const handleLeftClick = (_event: MouseEvent) => {
+    generateResource();
     return;
   };
 
@@ -51,4 +53,4 @@ const PlayableCard = (card: PlayableCardType) => {
   );
 };
 
-export default PlayableCard;
+export default FlipableCard;

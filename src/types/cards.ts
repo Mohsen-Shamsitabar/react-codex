@@ -19,6 +19,9 @@ export type PrimaryResourceSpace = PrimaryResource | BlankSpace;
 export type SecondaryResourceSpace = SecondaryResource | BlankSpace;
 export type ResourceSpace = Resource | BlankSpace;
 
+export type CardTypeRecord = typeof CARD_TYPES;
+export type CardType = (typeof CARD_TYPES)[keyof typeof CARD_TYPES];
+
 export type PointCategory = keyof typeof POINT_CATEGORIES;
 export type Points = {
   value: number;
@@ -29,10 +32,10 @@ export type Points = {
  * [`top-left`, `top-right`, `bottom-right`, `bottom-left`]
  */
 export type CornerSpaces = [
-  PrimaryResourceSpace,
-  PrimaryResourceSpace,
-  PrimaryResourceSpace,
-  PrimaryResourceSpace,
+  ResourceSpace,
+  ResourceSpace,
+  ResourceSpace,
+  ResourceSpace,
 ];
 
 export type CardId = `CARD_${string}`;
@@ -42,17 +45,17 @@ export type CardId = `CARD_${string}`;
 /**
  * ### max length is 3
  */
-export type CentralResources = PrimaryResourceSpace[];
+export type CentralResources = PrimaryResource[];
 
-export type StartingCardProps = {
+export type StarterCardProps = {
   cornerSpaces: CornerSpaces;
   centralResources: CentralResources;
 };
 
-export type StartingCard = {
+export type StarterCard = {
   id: CardId;
-  type: (typeof CARD_TYPES)["STARTER"];
-  properties: StartingCardProps;
+  type: CardTypeRecord["STARTER"];
+  properties: StarterCardProps;
 };
 
 // ========== ResourceCard ========== //
@@ -65,7 +68,7 @@ export type ResourceCardProps = {
 
 export type ResourceCard = {
   id: CardId;
-  type: (typeof CARD_TYPES)["RESOURCE"];
+  type: CardTypeRecord["RESOURCE"];
   properties: ResourceCardProps;
 };
 
@@ -85,7 +88,7 @@ export type GoldCardProps = {
 
 export type GoldCard = {
   id: CardId;
-  type: (typeof CARD_TYPES)["GOLD"];
+  type: CardTypeRecord["GOLD"];
   properties: GoldCardProps;
 };
 
@@ -95,11 +98,11 @@ export type ObjectiveCardProps = "";
 
 export type ObjectiveCard = {
   id: CardId;
-  type: (typeof CARD_TYPES)["OBJECTIVE"];
+  type: CardTypeRecord["OBJECTIVE"];
   properties: ObjectiveCardProps;
 };
 
 // === === === === === === === ===
 
-export type Card = StartingCard | ResourceCard | GoldCard | ObjectiveCard;
+export type Card = StarterCard | ResourceCard | GoldCard | ObjectiveCard;
 export type PlayableCardType = ResourceCard | GoldCard;

@@ -23,7 +23,7 @@ const CardResourceSpace = (resourceSpace: ResourceSpace) => {
     }
 
     case "QUILL": {
-      return <div className="aspect-square border bg-cyan-400" />;
+      return <div className="bg-quill aspect-square border" />;
     }
 
     default:

@@ -18,7 +18,7 @@ const CardCategory = (props: Props) => {
     }
 
     case POINT_CATEGORIES.QUILL: {
-      return <div className="border bg-indigo-800" />;
+      return <div className="bg-quill border" />;
     }
 
     default:

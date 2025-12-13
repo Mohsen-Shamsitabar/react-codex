@@ -1,8 +1,8 @@
 import CardCentralResources from "@/helpers/CardCentralResources.tsx";
 import CardCorners from "@/helpers/CardCorners.tsx";
-import type { StartingCardProps } from "@/types/cards.ts";
+import type { StarterCardProps } from "@/types/cards.ts";
 
-const StartingCard = (props: StartingCardProps) => {
+const StarterCard = (props: StarterCardProps) => {
   const { centralResources, cornerSpaces } = props;
 
   return (
@@ -13,4 +13,4 @@ const StartingCard = (props: StartingCardProps) => {
   );
 };
 
-export default StartingCard;
+export default StarterCard;

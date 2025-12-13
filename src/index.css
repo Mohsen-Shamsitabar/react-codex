@@ -37,12 +37,18 @@
   --color-primary-cream: var(--color-stone-300);
   --color-secondary-cream: var(--color-stone-400);
 
+  /* Quill placeholder color */
+  --color-quill: var(--color-indigo-800);
+
   /* ============================================== */
 
-  --spacing-card-width: 22.5rem;
-  --aspect-card: 1.5;
+  /* All px values are hardcoded and are in use in js */
 
-  --spacing-corner-width: 5rem;
+  --spacing-card-width: 360px;
+  --spacing-card-height: 240px;
+  /* --aspect-card: 1.5; */
+
+  --spacing-corner-width: 80px;
   --aspect-corner: 1;
 
   --spacing-central: 1rem;
@@ -70,6 +76,28 @@
 
   & > * {
     @apply size-full;
+  }
+}
+
+@utility cell-placeholder {
+  @apply size-4 cursor-pointer border-2;
+  @apply hover:bg-black;
+
+  animation-name: cell-animation;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+@keyframes cell-animation {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 2;
+  }
+  100% {
+    scale: 1;
   }
 }
 

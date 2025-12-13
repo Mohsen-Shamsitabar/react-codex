@@ -1,23 +1,48 @@
-import PlayableCard from "@/components/PlayableCard.tsx";
-import StartingCard from "@/components/StartingCard.tsx";
+import CardOffSide from "@/components/CardOffSide.tsx";
+import FlipableCard from "@/components/FlipableCard.tsx";
+import StarterCard from "@/components/StarterCard.tsx";
 import { CARD_TYPES } from "@/contstants/cards.ts";
 import type { Card } from "@/types/cards.ts";
 
-const CardBase = (card: Card) => {
-  if (card.type === CARD_TYPES.GOLD || card.type === CARD_TYPES.RESOURCE) {
-    return <PlayableCard {...card} />;
-  }
+type Props = {
+  card: Card;
+  canInteractWith?: boolean;
+  isOffSide?: boolean;
+};
 
-  if (card.type === CARD_TYPES.STARTER) {
+const CardBase = (props: Props) => {
+  const { card, canInteractWith = true, isOffSide = false } = props;
+
+  if (card.type === CARD_TYPES.GOLD || card.type === CARD_TYPES.RESOURCE) {
+    const { primaryResource } = card.properties;
+
+    if (isOffSide) {
+      return (
+        <div className="w-card-width h-card-height shrink-0">
+          <CardOffSide primaryResource={primaryResource} />
+        </div>
+      );
+    }
+
     return (
-      <div className="w-card-width aspect-card">
-        <StartingCard {...card.properties} />;
-      </div>
+      <FlipableCard
+        card={card}
+        canInteractWith={canInteractWith}
+        isOffSide={isOffSide}
+      />
     );
   }
 
   if (card.type === CARD_TYPES.OBJECTIVE) {
-    return <div className="w-card-width aspect-card">objective</div>;
+    return <div className="w-card-width h-card-height shrink-0">objective</div>;
+  }
+
+  if (card.type === CARD_TYPES.STARTER) {
+    return (
+      <div className="w-card-width h-card-height shrink-0">
+        <StarterCard {...card.properties} />
+      </div>
+    );
   }
 
   return null;

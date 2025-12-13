@@ -1,3 +1,13 @@
+/**
+ * Values are in `px`.
+ * Also, these values are ***hardcoded*** & are also in use in `index.css`.
+ */
+export const CARD_SETTINGS = {
+  width: 360,
+  height: 240,
+  cornerSize: 80,
+} as const;
+
 export const PRIMARY_RESOURCE_TYPES = {
   BLUE: "BLUE",
   GREEN: "GREEN",
@@ -11,7 +21,7 @@ export const SECONDARY_RESOURCE_TYPES = {
 
 export const BLANK_TYPES = {
   EMPTY: "EMPTY",
-  NULL: null,
+  NULL: "NULL",
 } as const;
 
 export const POINT_CATEGORIES = {

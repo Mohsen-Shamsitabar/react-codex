@@ -37,6 +37,9 @@
   --color-primary-cream: var(--color-stone-300);
   --color-secondary-cream: var(--color-stone-400);
 
+  /* Quill placeholder color */
+  --color-quill: var(--color-indigo-800);
+
   /* ============================================== */
 
   --spacing-card-width: 22.5rem;

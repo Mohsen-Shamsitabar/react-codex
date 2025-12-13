@@ -12,6 +12,7 @@ import generateCardPoints from "@/utilities/generate-card-points.ts";
 import generateCentralResources from "@/utilities/generate-central-resources.ts";
 import generateRequirements from "@/utilities/generate-requirements.ts";
 import {
+  generatePrimaryResource,
   generatePrimaryResourceSpace,
   generateResourceSpace,
   generateSecondaryResourceSpace,
@@ -20,11 +21,11 @@ import {
 type Options =
   | {
       cardType: CardTypeRecord["GOLD"];
-      primaryResource: PrimaryResource;
+      primaryResource?: PrimaryResource;
     }
   | {
       cardType: CardTypeRecord["RESOURCE"];
-      primaryResource: PrimaryResource;
+      primaryResource?: PrimaryResource;
     }
   | {
       cardType: CardTypeRecord["OBJECTIVE"];
@@ -40,7 +41,7 @@ const generateCard = (option: Options) => {
 
   switch (cardType) {
     case CARD_TYPES.GOLD: {
-      const { primaryResource } = option;
+      const { primaryResource = generatePrimaryResource() } = option;
 
       const cornerSpaces: CornerSpaces = [
         generateSecondaryResourceSpace(),
@@ -67,7 +68,7 @@ const generateCard = (option: Options) => {
     }
 
     case CARD_TYPES.RESOURCE: {
-      const { primaryResource } = option;
+      const { primaryResource = generatePrimaryResource() } = option;
 
       const cornerSpaces: CornerSpaces = [
         generateResourceSpace(),

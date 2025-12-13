@@ -105,4 +105,4 @@ export type ObjectiveCard = {
 // === === === === === === === ===
 
 export type Card = StarterCard | ResourceCard | GoldCard | ObjectiveCard;
-export type PlayableCardType = ResourceCard | GoldCard;
+export type FlipableCardType = ResourceCard | GoldCard;

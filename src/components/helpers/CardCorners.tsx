@@ -1,5 +1,5 @@
+import CardResourceSpace from "@/components/helpers/CardResourceSpace.tsx";
 import { BLANK_TYPES } from "@/contstants/cards.ts";
-import CardResourceSpace from "@/helpers/CardResourceSpace.tsx";
 import type { CornerSpaces } from "@/types/cards.ts";
 
 type Props = {

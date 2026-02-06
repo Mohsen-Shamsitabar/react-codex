@@ -8,6 +8,10 @@ export const CARD_SETTINGS = {
   cornerSize: 80,
 } as const;
 
+//===============================
+
+export const CELL_POS_SEPARATOR = ",";
+
 export const PRIMARY_RESOURCE_TYPES = {
   BLUE: "BLUE",
   GREEN: "GREEN",

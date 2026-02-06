@@ -1,4 +1,4 @@
-import CardResourceSpace from "@/helpers/CardResourceSpace.tsx";
+import CardResourceSpace from "@/components/helpers/CardResourceSpace.tsx";
 import type { GoldCardRequirement } from "@/types/cards.ts";
 
 type Props = {

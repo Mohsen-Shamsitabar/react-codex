@@ -58,6 +58,8 @@
   --spacing-category: 1.5rem;
 
   --spacing-req-resource: 1rem;
+
+  --size-board: 3000px;
 }
 
 @layer base {
@@ -121,4 +123,24 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* DICE ROLL */
+
+@theme {
+  --color-dice-dot: black;
+  --color-dice: whitesmoke;
+  --color-dice-border: gray;
+}
+
+@utility transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+@utility backface-hidden {
+  backface-visibility: hidden;
+}
+
+@utility perspective-1000 {
+  perspective: 1000px;
 }

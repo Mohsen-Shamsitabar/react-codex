@@ -1,4 +1,4 @@
-import CardCategory from "@/helpers/CardCategory.tsx";
+import CardCategory from "@/components/helpers/CardCategory.tsx";
 import type { Points } from "@/types/cards.ts";
 
 type Props = {

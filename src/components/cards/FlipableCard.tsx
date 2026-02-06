@@ -1,6 +1,6 @@
-import CardOffSide from "@/components/CardOffSide.tsx";
-import GoldCard from "@/components/GoldCard.tsx";
-import ResourceCard from "@/components/ResourceCard.tsx";
+import CardOffSide from "@/components/cards/CardOffSide.tsx";
+import GoldCard from "@/components/cards/GoldCard.tsx";
+import ResourceCard from "@/components/cards/ResourceCard.tsx";
 import { CARD_TYPES } from "@/contstants/cards.ts";
 import { useSelectedCard } from "@/providers/SelectedCardProvider.tsx";
 import type { FlipableCardType } from "@/types/cards.ts";

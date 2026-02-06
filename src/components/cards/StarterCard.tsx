@@ -1,5 +1,5 @@
-import CardCentralResources from "@/helpers/CardCentralResources.tsx";
-import CardCorners from "@/helpers/CardCorners.tsx";
+import CardCentralResources from "@/components/helpers/CardCentralResources.tsx";
+import CardCorners from "@/components/helpers/CardCorners.tsx";
 import type { StarterCardProps } from "@/types/cards.ts";
 
 const StarterCard = (props: StarterCardProps) => {

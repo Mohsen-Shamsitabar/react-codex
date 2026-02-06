@@ -1,6 +1,6 @@
-import CardCorners from "@/helpers/CardCorners.tsx";
-import CardPoints from "@/helpers/CardPoints.tsx";
-import CardRequirements from "@/helpers/CardRequirements.tsx";
+import CardCorners from "@/components/helpers/CardCorners.tsx";
+import CardPoints from "@/components/helpers/CardPoints.tsx";
+import CardRequirements from "@/components/helpers/CardRequirements.tsx";
 import type { GoldCardProps } from "@/types/cards.ts";
 import getPrimaryColorToken from "@/utilities/get-primary-color.ts";
 

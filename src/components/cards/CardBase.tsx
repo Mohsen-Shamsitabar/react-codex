@@ -1,6 +1,6 @@
-import CardOffSide from "@/components/CardOffSide.tsx";
-import FlipableCard from "@/components/FlipableCard.tsx";
-import StarterCard from "@/components/StarterCard.tsx";
+import CardOffSide from "@/components/cards/CardOffSide.tsx";
+import FlipableCard from "@/components/cards/FlipableCard.tsx";
+import StarterCard from "@/components/cards/StarterCard.tsx";
 import { CARD_TYPES } from "@/contstants/cards.ts";
 import type { Card } from "@/types/cards.ts";
 
